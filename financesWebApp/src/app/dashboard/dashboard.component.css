@@ -1,0 +1,99 @@
+#container1 {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  float: left;
+}
+
+#container2 {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  float: right;
+}
+
+.featureContainer {
+  height: auto;
+}
+
+#setGoal {
+  border-right: solid 2px #baa87d;
+  border-bottom: solid 2px #baa87d;
+  min-height: 700px;
+}
+
+#debt {
+  border-bottom: solid 2px #baa87d;
+}
+
+#expensesTable {
+  padding-left: 1%;
+  font-size: 25px;
+}
+
+#row-header {
+  height:30px;
+  background-color: white;
+}
+
+#expensesTable tr:nth-child(even) {
+  background-color: #cbcbcb;
+}
+#expensesTable tr:nth-child(odd) {
+  background-color: #e7e7e7;
+}
+
+#expensesTable td {
+  width: 70%;
+  height: 80px;
+  padding: 0 10px 0 10px;
+}
+
+p {
+  font-size: 35px;
+  color: #9e8a54;
+  padding-left: 20px;
+}
+
+
+#goalsTable {
+  padding-left: 7%;
+  font-size: 25px;
+}
+
+#goalsTable th {
+  height:30px;
+  background-color: white;
+}
+
+#goalsTable tr:nth-child(even) {
+  background-color: #cbcbcb;
+}
+#goalsTable tr:nth-child(odd) {
+  background-color: #e7e7e7;
+}
+
+#goalsTable td {
+  height: 80px;
+  padding: 0 10px 0 10px;
+
+}
+
+#goalButton {
+  margin: 20px 0 0 350px;
+  height: 50px;
+  width: 150px;
+  background-color: #baa87d;
+  border-radius: 10px;
+  font-size: 20px;
+  border: 0;
+  color: white;
+}
+
+#goalButton:hover {
+  background-color: #dad0ba;
+  transition: background-color 500ms;
+  color: black;
+}
+
+

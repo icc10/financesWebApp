@@ -1,0 +1,52 @@
+<div id="container1">
+  <div class="featureContainer" id="setGoal">
+    <p>Active Goals</p>
+    <table id="goalsTable">
+      <thead>
+      <tr id="table-header">
+        <th>Goal Name</th>
+        <th>Amount To Save</th>
+        <th>Date To Save By</th>
+        <th>Amount Saved So Far</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let goal of goals" class="data-row">
+        <td>{{ goal.name }}</td>
+        <td>{{ goal.amountToSave }}</td>
+        <td>{{ goal.date }}</td>
+        <td>{{ goal.amountSaved }}</td>
+      </tr>
+      </tbody>
+    </table>
+    <button id="goalButton" routerLink="add-goal">Add A Goal</button>
+  </div>
+</div>
+<div id="container2">
+  <div class="featureContainer" id="debt">
+    <p>Current Debt Amount: ${{debtAmount}}</p>
+  </div>
+  <div class="featureContainer" id="expenses">
+    <p>Expenses</p>
+    <table id="expensesTable">
+      <tbody>
+      <tr>
+        <th class="row-header">Daily Expenses</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th class="row-header">Weekly Expenses</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th class="row-header">Monthly Expenses</th>
+        <td></td>
+      </tr>
+      <tr>
+        <th class="row-header">Yearly Expenses</th>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
