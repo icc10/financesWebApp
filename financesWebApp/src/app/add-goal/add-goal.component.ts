@@ -18,7 +18,7 @@ export class AddGoalComponent {
     amountSaved: '',
   };
 
-  newGoal(): void {
+  addGoal(): void {
     const data = {
       name: this.goal.name,
       amountToSave: this.goal.amountToSave,
@@ -27,5 +27,16 @@ export class AddGoalComponent {
     };
 
     console.log(data);
+    this.submitted = true;
+  }
+
+  newGoal(): void {
+    this.goal.name = '';
+    this.goal.amountToSave = '';
+    this.goal.date = '';
+    this.goal.amountSaved = '';
+
+    console.log(this.goal);
+    this.submitted = false;
   }
 }

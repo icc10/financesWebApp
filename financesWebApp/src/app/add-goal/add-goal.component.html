@@ -9,12 +9,12 @@
     <input class="input" type="text" id="goalName" [(ngModel)]="goal.name">
     <hr>
 
-    <label for="amountToSave" class="input-label">Candidate Name</label>
+    <label for="amountToSave" class="input-label">Amount To Save</label>
     <input class="input" type="text" id="amountToSave" [(ngModel)]="goal.amountToSave">
     <hr>
 
-    <button class="submit" id="submit-opening" (click)="newGoal()"><p>Apply</p></button>
-    <button class="submit" id="cancel-opening" routerLink="../"><p>Cancel</p></button>
+    <button class="submit" id="submit-opening" (click)="addGoal()">Apply</button>
+    <button class="submit" id="cancel-opening" routerLink="../">Cancel</button>
 
   </div>
   <div class="input-container">
@@ -22,7 +22,7 @@
     <input class="input" type="text" id="date" [(ngModel)]="goal.date">
     <hr>
 
-    <label for="amountSaved" class="input-label">Application Date </label>
+    <label for="amountSaved" class="input-label">Amount Saved</label>
     <input class="input" type="text" id="amountSaved" [(ngModel)]="goal.amountSaved">
     <hr>
   </div>
@@ -30,7 +30,7 @@
 </div>
 
 } @else {
-<p id="success">Application was submitted successfully!</p>
-<a routerLink=""><button class="submit"><p>View My Applications</p></button></a>
-<a routerLink=""><button class="submit"><p>Return to Openings</p></button></a>
+<p id="success">Goal was added successfully!</p>
+<button class="submit" (click)="newGoal()">Add Another Goal</button>
+<a routerLink="../"><button class="submit">Return to Dashboard</button></a>
 }
