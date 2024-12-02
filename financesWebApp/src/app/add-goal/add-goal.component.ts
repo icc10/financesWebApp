@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Goal } from '../models/Goal';
+import { GoalsService } from '../services/goalsService';
 
 @Component({
   selector: 'app-add-goal',
@@ -11,12 +12,16 @@ import { Goal } from '../models/Goal';
 export class AddGoalComponent {
   submitted: boolean = false;
 
+
   goal: Goal = {
     name: '',
     amountToSave: '',
     date: '',
     amountSaved: '',
   };
+
+  constructor(private goalsService: GoalsService) {}
+
 
   addGoal(): void {
     const data = {
@@ -27,7 +32,15 @@ export class AddGoalComponent {
     };
 
     console.log(data);
-    this.submitted = true;
+    this.goalsService.create(data).
+    subscribe({
+      next: (res) => {
+        console.log('success', res);
+        this.submitted = true;
+      },
+      error: (e) => console.error('fail', e)
+    });
+
   }
 
   newGoal(): void {
@@ -37,6 +50,7 @@ export class AddGoalComponent {
     this.goal.amountSaved = '';
 
     console.log(this.goal);
+
     this.submitted = false;
   }
 }
