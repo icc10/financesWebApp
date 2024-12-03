@@ -1,0 +1,8 @@
+/Users/milesnewland/financesWebApp/financesBackend/src/main/java/com/example/financesApp/FinancesAppApplication.java
+/Users/milesnewland/financesWebApp/financesBackend/src/main/java/com/example/financesApp/controller/AuthController.java
+/Users/milesnewland/financesWebApp/financesBackend/src/main/java/com/example/financesApp/controller/GoalController.java
+/Users/milesnewland/financesWebApp/financesBackend/src/main/java/com/example/financesApp/model/Goal.java
+/Users/milesnewland/financesWebApp/financesBackend/src/main/java/com/example/financesApp/model/User.java
+/Users/milesnewland/financesWebApp/financesBackend/src/main/java/com/example/financesApp/repository/GoalRepo.java
+/Users/milesnewland/financesWebApp/financesBackend/src/main/java/com/example/financesApp/repository/UserRepo.java
+/Users/milesnewland/financesWebApp/financesBackend/src/main/java/com/example/financesApp/service/AuthService.java
