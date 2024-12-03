@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Goal } from '../models/Goal';
+import { Observable } from 'rxjs';
 
 const baseUrl = 'http://localhost:8080/api/goals';//will need to be changed
 
@@ -16,7 +17,7 @@ export class GoalsService {
   }
 
   getGoal(userId: any, goalId: any): Observable<Goal> {
-    return this.http.get<Goal[]>(baseUrl);
+    return this.http.get<Goal>(baseUrl);
   }
 
   create(data: any): Observable<any> {
