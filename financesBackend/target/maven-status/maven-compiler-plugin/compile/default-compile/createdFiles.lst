@@ -1,8 +1,8 @@
-com/example/financesApp/service/AuthService.class
 com/example/financesApp/repository/GoalRepo.class
 com/example/financesApp/model/Goal.class
+com/example/financesApp/model/User.class
+com/example/financesApp/controller/AuthController.class
+com/example/financesApp/service/AuthService.class
 com/example/financesApp/controller/GoalController.class
 com/example/financesApp/repository/UserRepo.class
-com/example/financesApp/model/User.class
 com/example/financesApp/FinancesAppApplication.class
-com/example/financesApp/controller/AuthController.class

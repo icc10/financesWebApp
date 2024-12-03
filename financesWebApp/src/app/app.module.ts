@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { AddGoalComponent } from './add-goal/add-goal.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AddGoalComponent } from './add-goal/add-goal.component';
     FormsModule,
     AppRoutingModule,
     RouterModule,
+    HttpClientModule,
 
   ],
   providers: [],
