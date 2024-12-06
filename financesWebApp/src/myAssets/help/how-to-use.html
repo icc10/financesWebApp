@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To Use</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        #how-to-use {
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #how-to-use h1 {
+            font-size: 36px;
+            color: #9e8a54;
+            border-bottom: solid 2px #baa87d;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #how-to-use p {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #baa87d;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #dad0ba;
+            transition: background-color 500ms;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="how-to-use">
+        <h1>How To Use</h1>
+        <p>1. Select 'Add Goal'</p>
+        <p>2. Input Requested Info</p>
+        <p>3. Watch as you reach your goal!</p>
+        <button onclick="goBack()">Back</button>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>
+
