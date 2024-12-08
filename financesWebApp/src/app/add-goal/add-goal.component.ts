@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Goal } from '../models/Goal';
-//import { GoalsService } from '../services/goals.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-add-goal',
@@ -10,7 +10,7 @@ import { Goal } from '../models/Goal';
 })
 export class AddGoalComponent {
   submitted: boolean = false;
-
+  username: string;
 
   goal: Goal = {
     name: '',
@@ -19,8 +19,9 @@ export class AddGoalComponent {
     amountSaved: '',
   };
 
-  constructor(/*private goalsService: GoalsService*/) {}
-
+  constructor(private userService: UserService) {
+    this.username = this.userService.getUsername(); // get the username
+  }
 
   addGoal(): void {
     const data = {
@@ -31,15 +32,6 @@ export class AddGoalComponent {
     };
 
     console.log(data);
-//     this.goalsService.create(data).
-//     subscribe({
-//       next: (res:any) => {
-//         console.log('success', res);
-//         this.submitted = true;
-//       },
-//       error: (e:any) => console.error('fail', e)
-//     });
-
   }
 
   newGoal(): void {

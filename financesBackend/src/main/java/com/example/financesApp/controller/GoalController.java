@@ -3,7 +3,6 @@ package com.example.financesApp.controller;
 import com.example.financesApp.model.Goal;
 import com.example.financesApp.model.User;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,7 +19,8 @@ public class GoalController {
      */
 
     @PostMapping("/create")
-    public String createGoal(@RequestParam String username, @RequestParam String description) {
+    public String createGoal(@RequestParam String username, @RequestParam String goalName,
+            @RequestParam int goalStartingAmount, @RequestParam int goalEndingAmount) {
         // TODO: implement createGoal
         return "User not found.";
     }

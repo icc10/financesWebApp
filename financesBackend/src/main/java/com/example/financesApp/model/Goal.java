@@ -14,6 +14,40 @@ public class Goal {
 
     private int goalEndingAmount;
 
+    public Goal() {
+    }
+
+    public Goal(User user, String goalName, int goalStaringAmount, int goalEndingAmount) {
+        this.user = user;
+        this.goalName = goalName;
+        this.goalStaringAmount = goalStaringAmount;
+        this.goalEndingAmount = goalEndingAmount;
+    }
+
+    public String getGoalName() {
+        return goalName;
+    }
+
+    public void setGoalName(String goalName) {
+        this.goalName = goalName;
+    }
+
+    public int getGoalStaringAmount() {
+        return goalStaringAmount;
+    }
+
+    public void setGoalStaringAmount(int goalStaringAmount) {
+        this.goalStaringAmount = goalStaringAmount;
+    }
+
+    public int getGoalEndingAmount() {
+        return goalEndingAmount;
+    }
+
+    public void setGoalEndingAmount(int goalEndingAmount) {
+        this.goalEndingAmount = goalEndingAmount;
+    }
+
     public User getUser() {
         return user;
     }
