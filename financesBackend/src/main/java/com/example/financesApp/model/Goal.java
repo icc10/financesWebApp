@@ -6,7 +6,7 @@ package com.example.financesApp.model;
  */
 public class Goal {
 
-    private User user;
+    private String username;
 
     private String goalName;
 
@@ -17,8 +17,8 @@ public class Goal {
     public Goal() {
     }
 
-    public Goal(User user, String goalName, int goalStaringAmount, int goalEndingAmount) {
-        this.user = user;
+    public Goal(String user, String goalName, int goalStaringAmount, int goalEndingAmount) {
+        this.username = user;
         this.goalName = goalName;
         this.goalStaringAmount = goalStaringAmount;
         this.goalEndingAmount = goalEndingAmount;
@@ -48,11 +48,11 @@ public class Goal {
         this.goalEndingAmount = goalEndingAmount;
     }
 
-    public User getUser() {
-        return user;
+    public String getUser() {
+        return username;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(String user) {
+        this.username = user;
     }
 }

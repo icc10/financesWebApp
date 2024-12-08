@@ -1,0 +1,2 @@
+miles:miles' first goal:100:1000
+miles:miles' second goal:500:5000

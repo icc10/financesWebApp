@@ -1,12 +1,16 @@
 package com.example.financesApp;
 
+import com.example.financesApp.model.Goal;
+import org.springframework.stereotype.Component;
+
 import java.io.*;
 import java.util.*;
 
+@Component
 public class financeDB {
 
-    private Map<String, String> loginData;
-    private Map<String, List<Goal>> userGoals;
+    public Map<String, String> loginData;
+    public Map<String, List<Goal>> userGoals;
     private static final String LOGIN_FILE = "loginData.txt";
     private static final String GOALS_FILE = "goalsData.txt";
 
@@ -16,22 +20,7 @@ public class financeDB {
         loadData();
     }
 
-    static class Goal {
-        String goalName;
-        int startingAmount;
-        int endingAmount;
-
-        Goal(String goalName, int startingAmount, int endingAmount) {
-            this.goalName = goalName;
-            this.startingAmount = startingAmount;
-            this.endingAmount = endingAmount;
-        }
-
-        @Override
-        public String toString() {
-            return goalName + " (Start: " + startingAmount + ", End: " + endingAmount + ")";
-        }
-    }
+   
 
     public void connect() {
     }
@@ -42,7 +31,7 @@ public class financeDB {
     }
 
     public void addGoal(String username, String goalName, int startingAmount, int endingAmount) {
-        Goal goal = new Goal(goalName, startingAmount, endingAmount);
+        Goal goal = new Goal(username, goalName, startingAmount, endingAmount);
         userGoals.computeIfAbsent(username, k -> new ArrayList<>()).add(goal);
         saveData();
     }
@@ -64,7 +53,7 @@ public class financeDB {
             for (Map.Entry<String, List<Goal>> entry : userGoals.entrySet()) {
                 for (Goal goal : entry.getValue()) {
                     goalsWriter.write(
-                            entry.getKey() + ":" + goal.goalName + ":" + goal.startingAmount + ":" + goal.endingAmount);
+                            entry.getKey() + ":" + goal.getGoalName() + ":" + goal.getGoalStaringAmount() + ":" + goal.getGoalEndingAmount());
                     goalsWriter.newLine();
                 }
             }
@@ -91,7 +80,7 @@ public class financeDB {
                 String goalName = parts[1];
                 int startingAmount = Integer.parseInt(parts[2]);
                 int endingAmount = Integer.parseInt(parts[3]);
-                Goal goal = new Goal(goalName, startingAmount, endingAmount);
+                Goal goal = new Goal(username, goalName, startingAmount, endingAmount);
                 userGoals.computeIfAbsent(username, k -> new ArrayList<>()).add(goal);
             }
             goalsReader.close();

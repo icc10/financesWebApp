@@ -17,7 +17,7 @@ public class WebSecurityConfig {
                 .and()
                 .csrf().disable() // Disable CSRF for testing
                 .authorizeRequests()
-                .requestMatchers("/auth/**").permitAll()
+                .requestMatchers("/auth/**", "/goal/**").permitAll() // Allow all requests to /goal/**
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic(); // Optional: enable basic authentication for testing
