@@ -4,10 +4,9 @@ A web application designed to help users easily manage their finances and create
 to run: 
 1. cd financesBackend/
 2. mvn spring-boot:run
-3.
-(in a new terminal)
-cd financesWebApp  
-4. ng serve
+3. open a new terminal 
+4. cd financesWebApp
+5. ng serve
 
 
 
