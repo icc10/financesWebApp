@@ -43,20 +43,25 @@ export class LoginComponent {
     }
   }
 
-  public signIn(email: string, password: string) {
+  public signIn(username: string, password: string) {
     try {
-      //will have to add signing in implementation
-      this.http.get('http://localhost:8080/auth/ping', { responseType: 'text' })
-        .subscribe({
-          next: (response: string) => {
-            console.log('Backend response:', response);
-            // You could add a toast or some UI feedback here
-          },
-          error: (error) => {
-            console.error('Connection error', error);
-            // Handle connection issues
-          }
-        });
+      this.http.post('http://localhost:8080/auth/login', null, {
+        params: {
+          username: username,
+          password: password
+        },
+        responseType: 'text',
+        withCredentials: true // Ensure credentials are sent
+      }).subscribe({
+        next: (response: string) => {
+          console.log('Backend response:', response);
+          // You could add a toast or some UI feedback here
+        },
+        error: (error) => {
+          console.error('Connection error', error);
+          // Handle connection issues
+        }
+      });
       return true;
     } catch (error) {
       return false;

@@ -4,7 +4,6 @@ import com.example.financesApp.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
 /*
  * Controller class for user authentication
  * manages user registration and login
@@ -23,14 +22,10 @@ public class AuthController {
         return "Backend is running.";
     }
 
-    @PostMapping("/register")
-    public String register(@RequestParam String username, @RequestParam String password) {
-        return authService.register(username, password);
-    }
-
     @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password) {
+        System.out.println("Received login request with username: " + username + " and password: " + password);
         boolean success = authService.login(username, password);
-        return success ? "Login successful." : "Invalid username or password.";
+        return success ? "Login successful." : "Login failed.";
     }
 }

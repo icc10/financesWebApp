@@ -2,8 +2,7 @@ package com.example.financesApp.controller;
 
 import com.example.financesApp.model.Goal;
 import com.example.financesApp.model.User;
-import com.example.financesApp.repository.GoalRepo;
-import com.example.financesApp.repository.UserRepo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,11 +12,6 @@ import java.util.List;
 @RequestMapping("/goal")
 public class GoalController {
 
-    @Autowired
-    private GoalRepo goalRepository; // injects the GoalRepository dependency
-
-    @Autowired
-    private UserRepo userRepository; // injects the UserRepository dependency
     /*
      * retrieves the user by username, returns "User not found." if user does not
      * exist
@@ -27,15 +21,8 @@ public class GoalController {
 
     @PostMapping("/create")
     public String createGoal(@RequestParam String username, @RequestParam String description) {
-        User user = userRepository.findByUsername(username).orElse(null);
-        if (user == null) {
-            return "User not found.";
-        }
-        Goal goal = new Goal();
-        goal.setDescription(description);
-        goal.setUser(user);
-        goalRepository.save(goal);
-        return "Goal created successfully.";
+        // TODO: implement createGoal
+        return "User not found.";
     }
 
     /*
@@ -45,11 +32,8 @@ public class GoalController {
      */
     @GetMapping("/list")
     public List<Goal> listGoals(@RequestParam String username) {
-        User user = userRepository.findByUsername(username).orElse(null);
-        if (user == null) {
-            return List.of(); // Return an empty list if user is not found
-        }
-        return goalRepository.findByUserId(user.getId());
+        // TODO: implement listGoals
+        return null;
     }
 
 }
