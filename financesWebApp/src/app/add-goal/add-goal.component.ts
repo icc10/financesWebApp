@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Goal } from '../models/Goal';
 import { UserService } from '../services/user.service';
 
@@ -14,30 +15,42 @@ export class AddGoalComponent {
 
   goal: Goal = {
     name: '',
+    username: '',
     amountToSave: '',
-    date: '',
     amountSaved: '',
+
   };
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private http: HttpClient) {
     this.username = this.userService.getUsername(); // get the username
   }
 
   addGoal(): void {
     const data = {
-      name: this.goal.name,
-      amountToSave: this.goal.amountToSave,
-      date: this.goal.date,
-      amountSaved: this.goal.amountSaved
+      username: this.username,
+      goalName: this.goal.name,
+      goalStartingAmount: this.goal.amountSaved,
+      goalEndingAmount: this.goal.amountToSave
     };
 
-    console.log(data);
+    this.http.post('http://localhost:8080/goal/create', null, {
+      params: data,
+      responseType: 'text',
+      withCredentials: true // ensure credentials are sent
+    }).subscribe({
+      next: (response: string) => {
+        console.log('Backend response:', response);
+        this.submitted = true;
+      },
+      error: (error) => {
+        console.error('Connection error', error);
+      }
+    });
   }
 
   newGoal(): void {
     this.goal.name = '';
     this.goal.amountToSave = '';
-    this.goal.date = '';
     this.goal.amountSaved = '';
 
     console.log(this.goal);

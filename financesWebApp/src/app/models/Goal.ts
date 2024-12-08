@@ -1,13 +1,13 @@
 export class Goal {
+    username: string;
     name: string;
     amountToSave: string;
-    date: string;
     amountSaved: string;
 
-    constructor(name: string, amountToSave: string, date: string, amountSaved: string) {
+    constructor(username: string, name: string, amountToSave: string, amountSaved: string, date: string) { // Add date parameter
+        this.username = username;
         this.name = name;
         this.amountToSave = amountToSave;
-        this.date = date;
         this.amountSaved = amountSaved;
     }
 }

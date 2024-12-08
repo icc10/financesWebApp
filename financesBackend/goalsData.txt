@@ -1,2 +1,5 @@
 miles:miles' first goal:100:1000
 miles:miles' second goal:500:5000
+miles:miles' first goal:50:500
+miles:miles' 4th goal:0:10000
+miles:124312:23423:31242

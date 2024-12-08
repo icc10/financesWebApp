@@ -53,7 +53,7 @@ public class financeDB {
             for (Map.Entry<String, List<Goal>> entry : userGoals.entrySet()) {
                 for (Goal goal : entry.getValue()) {
                     goalsWriter.write(
-                            entry.getKey() + ":" + goal.getGoalName() + ":" + goal.getGoalStaringAmount() + ":" + goal.getGoalEndingAmount());
+                            entry.getKey() + ":" + goal.getGoalName() + ":" + goal.getGoalStartingAmount() + ":" + goal.getGoalEndingAmount());
                     goalsWriter.newLine();
                 }
             }

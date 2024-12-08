@@ -55,7 +55,7 @@ public class GoalController {
         List<Goal> goals = new ArrayList<>();
         List<Goal> financeGoals = db.getGoalsByUsername(username);
         for (Goal financeGoal : financeGoals) {
-            goals.add(new Goal(username, financeGoal.getGoalName(), financeGoal.getGoalStaringAmount(),
+            goals.add(new Goal(username, financeGoal.getGoalName(), financeGoal.getGoalStartingAmount(),
                     financeGoal.getGoalEndingAmount()));
         }
         return goals;
